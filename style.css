@@ -65,7 +65,7 @@ header {
   display: grid;
   background-color: rgb(249,249,249);
   grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: 120vh auto;
+  grid-template-rows: auto auto;
   grid-template-areas:
     "video-cont recomm"
     "comm recomm";
@@ -87,7 +87,7 @@ header {
   display: grid;
   background-color: rgb(249,249,249);
   grid-template-columns: 1fr;
-  grid-template-rows: 120vh auto;
+  grid-template-rows: auto auto;
   grid-template-areas:
     "video-cont"
     "comm";
