@@ -1,0 +1,349 @@
+/* CSS RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*                */
+/* General layout */
+/*                */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #555;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 56px;
+  padding: 0 16px;
+  width: 95vw;
+}
+.container {
+  display: grid;
+  background-color: rgb(249,249,249);
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 120vh auto;
+  grid-template-areas:
+    "video-cont recomm"
+    "comm recomm";
+  padding-left: 7vw;
+  padding-top: 1.5vw;
+}
+.video-cont { 
+  grid-area: video-cont;
+  padding-right: 1.5vw;
+}
+.recomm { 
+  grid-area: recomm; 
+}
+@media screen and (max-width: 800px) {
+  .recomm {
+    display: none;
+  }
+  .container {
+  display: grid;
+  background-color: rgb(249,249,249);
+  grid-template-columns: 1fr;
+  grid-template-rows: 120vh auto;
+  grid-template-areas:
+    "video-cont"
+    "comm";
+  padding-left: 7vw;
+  padding-top: 1.5vw;
+  }
+}
+.comm {
+  grid-area: comm; 
+}
+
+/* Header */
+.header-btn {
+  font-size: 1.15em;
+  font-weight: bold;
+  border: none;
+  background-color: white;
+  color: #555;
+  padding: 0 20px;
+  outline: none;
+  cursor: pointer;
+}
+.header-btn:active {
+  outline: 1px solid rgb(6,100,215);
+}
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.header-logo {
+  padding: 0 20px;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.header-center {
+  display: flex;
+  align-items: center;
+}
+.header-searchbar {
+  display: flex;
+  height: 30px;
+}
+.header-search {
+  width: 40vw;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+  outline: none;
+  z-index: 2;
+}
+.header-search:focus {
+  outline: 1px solid rgb(6,100,215);
+}
+.header-submit {
+  border: 1px solid #ccc;
+  border-left: none;
+  padding: 0 25px;
+  color: #555;
+  background-color: rgb(249,249,249);
+  outline: none;
+  cursor: pointer;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.header-settings {
+  transform: rotate(-90deg);
+}
+.header-login-btn {
+  color: rgb(6,100,215);
+  border: 1px solid rgb(6,100,215);
+  font-size: 1em;
+  padding: 10px;
+}
+/* Video */
+.video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+h1 {
+  font-size: 1.3em;
+  padding: 14px 0;
+  color: black;
+}
+.video-stats {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #bbb;
+}
+.video-views {
+  padding-bottom: 20px;
+}
+.video-likes {
+  padding-bottom: 20px;
+  border-bottom: 2px solid #555;
+}
+.btn-like {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font-weight: bold;
+}
+.video-share {
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+.video-save {
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+.video-options {
+  position: relative;
+  bottom: 3px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: 1.6em;
+}
+/* Video info */
+.video-desc {
+  padding-top: 15px;
+    border-bottom: 1px solid #bbb;
+}
+.channel-info {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 48px 1fr 1fr;
+}
+.channel-pic {
+  border-radius: 50%;
+}
+.channel-name {
+  justify-self: start;
+  padding-left: 15px;
+}
+.channel-name-line {
+  color: black;
+  font-weight: bold;
+  font-size: .9em;
+}
+.channel-subscribe-btn {
+  justify-self: end;
+}
+.subscribe-btn {
+  background-color: rgb(204,0,0);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 2px;
+}
+.desc {
+  color: black;
+  padding: 20px 63px;
+}
+.show-more {
+  color: #555;
+  font-weight: bold;
+  font-size: 11.5px;
+}
+/* Recommended */
+.thumbnail {
+  display: flex;
+  justify-content: flex-start;
+  text-decoration: none;
+  padding-bottom: 4px;
+  color: inherit;
+}
+.thumbnail-img img {
+  height: 96px;
+  border-radius: 2px;
+}
+.thumbnail-info {
+  display: flex;
+  flex-flow: column nowrap;
+  padding-left: 4px;
+}
+.thumbnail-title {
+  color: black;
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+.thumbnail-channel {
+  padding: 4px 0;
+}
+/* Comments */
+.comm {
+padding-right: 1.5vw;
+}
+.comm-info {
+  display: flex;
+  padding: 15px 0;
+}
+.comm-number {
+  color: black;
+  font-size: 1.2em;
+  padding-right: 40px;
+}
+.comm-order {
+  font-weight: bold;
+}
+.comm-enter {
+  display: flex;
+  align-items: center;
+}
+.comm-input-cont {
+  padding-left: 20px;
+  width: 100%;
+}
+.comm-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #bbb;
+  background-color: rgb(249,249,249);
+}
+.comm-cont {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "comm-picture comm-channel-info"
+    "comm-picture comm-text"
+    "comm-picture comm-likes"
+    "comm-picture comm-answers";
+  column-gap: 20px;
+  row-gap: 10px;
+  padding-top: 25px;
+}
+.comm-picture {
+  grid-area: comm-picture;
+  border-radius: 50%;
+}
+.comm-text {
+  grid-area: comm-text;
+  color: black;
+}
+.comm-likes {
+  grid-area: comm-likes;
+  font-size: .9em;
+}
+.comm-likes b {
+  font-weight: bold;
+}
+.comm-answers {
+  color: rgb(6,100,215);
+  font-weight: bold;
+}
